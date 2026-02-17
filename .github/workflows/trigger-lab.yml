@@ -1,0 +1,30 @@
+name: Trigger Lab
+
+# 2. Define the triggers
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/2 * * * *'  # runs every 2 minutes for testing
+
+# 3. One job named handle-event
+jobs:
+  handle-event:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print trigger type
+        run: |
+          echo "GitHub Event Name: ${{ github.event_name }}"
+          
+          # 5. Bash if statements
+          if [ "${{ github.event_name }}" == "push" ]; then
+            echo "Code was pushed!"
+          elif [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
+            echo "Manual execution"
+          elif [ "${{ github.event_name }}" == "schedule" ]; then
+            echo "Running on schedule"
+          else
+            echo "Unknown trigger"
+          fi
+
