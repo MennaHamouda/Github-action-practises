@@ -1,4 +1,5 @@
 name: Trigger Lab
+run-name: "$ {{ github.actor }} is Example2 Run"
 
 # 2. Define the triggers
 on:
