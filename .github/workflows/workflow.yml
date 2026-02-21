@@ -1,0 +1,18 @@
+name: Marketplace and Reusable Workflows
+run-name: "${{ github.actor }} Marketplace and Reuse Run"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  setup-python-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Show Python version
+        run: python --version
