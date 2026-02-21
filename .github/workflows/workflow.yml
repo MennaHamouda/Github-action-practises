@@ -2,7 +2,9 @@ name: Marketplace and Reusable Workflows
 run-name: "${{ github.actor }} Marketplace and Reuse Run"
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   setup-python-job:
