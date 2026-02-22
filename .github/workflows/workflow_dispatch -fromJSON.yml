@@ -13,12 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print raw JSON input
-        run: |
-          echo "Raw input:"
-          echo '${{ github.event.inputs.config }}'
+        run: echo '${{ github.event.inputs.config }}'
 
-      - name: Use fromJSON to access values
+      - name: Parse JSON
         run: |
-          echo "Environment: ${{ fromJSON(github.event.inputs.config).env }}"
+          echo "Env: ${{ fromJSON(github.event.inputs.config).env }}"
           echo "Region: ${{ fromJSON(github.event.inputs.config).region }}"
           echo "Replicas: ${{ fromJSON(github.event.inputs.config).replicas }}"
