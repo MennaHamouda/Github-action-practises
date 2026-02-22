@@ -1,59 +1,59 @@
-name: Print GitHub Context Properties
+# name: Print GitHub Context Properties
 
-on:
-  push:
-  workflow_dispatch:
+# on:
+#   push:
+#   workflow_dispatch:
 
-jobs:
-  print-github:
-    runs-on: ubuntu-latest
+# jobs:
+#   print-github:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Print github basic info
-        run: |
-          echo "github.action = ${{ github.action }}"
-          echo "github.actor = ${{ github.actor }}"
-          echo "github.actor_id = ${{ github.actor_id }}"
-          echo "github.event_name = ${{ github.event_name }}"
-          echo "github.job = ${{ github.job }}"
+#     steps:
+#       - name: Print github basic info
+#         run: |
+#           echo "github.action = ${{ github.action }}"
+#           echo "github.actor = ${{ github.actor }}"
+#           echo "github.actor_id = ${{ github.actor_id }}"
+#           echo "github.event_name = ${{ github.event_name }}"
+#           echo "github.job = ${{ github.job }}"
 
-      - name: Print repository info
-        run: |
-          echo "github.repository = ${{ github.repository }}"
-          echo "github.repository_id = ${{ github.repository_id }}"
-          echo "github.repository_owner = ${{ github.repository_owner }}"
-          echo "github.repository_owner_id = ${{ github.repository_owner_id }}"
-          echo "github.repositoryUrl = ${{ github.repositoryUrl }}"
+#       - name: Print repository info
+#         run: |
+#           echo "github.repository = ${{ github.repository }}"
+#           echo "github.repository_id = ${{ github.repository_id }}"
+#           echo "github.repository_owner = ${{ github.repository_owner }}"
+#           echo "github.repository_owner_id = ${{ github.repository_owner_id }}"
+#           echo "github.repositoryUrl = ${{ github.repositoryUrl }}"
 
-      - name: Print ref info
-        run: |
-          echo "github.ref = ${{ github.ref }}"
-          echo "github.ref_name = ${{ github.ref_name }}"
-          echo "github.ref_type = ${{ github.ref_type }}"
-          echo "github.ref_protected = ${{ github.ref_protected }}"
-          echo "github.sha = ${{ github.sha }}"
+#       - name: Print ref info
+#         run: |
+#           echo "github.ref = ${{ github.ref }}"
+#           echo "github.ref_name = ${{ github.ref_name }}"
+#           echo "github.ref_type = ${{ github.ref_type }}"
+#           echo "github.ref_protected = ${{ github.ref_protected }}"
+#           echo "github.sha = ${{ github.sha }}"
 
-      - name: Print workflow run info
-        run: |
-          echo "github.run_id = ${{ github.run_id }}"
-          echo "github.run_number = ${{ github.run_number }}"
-          echo "github.run_attempt = ${{ github.run_attempt }}"
-          echo "github.workflow = ${{ github.workflow }}"
-          echo "github.workflow_ref = ${{ github.workflow_ref }}"
-          echo "github.workflow_sha = ${{ github.workflow_sha }}"
+#       - name: Print workflow run info
+#         run: |
+#           echo "github.run_id = ${{ github.run_id }}"
+#           echo "github.run_number = ${{ github.run_number }}"
+#           echo "github.run_attempt = ${{ github.run_attempt }}"
+#           echo "github.workflow = ${{ github.workflow }}"
+#           echo "github.workflow_ref = ${{ github.workflow_ref }}"
+#           echo "github.workflow_sha = ${{ github.workflow_sha }}"
 
-      - name: Print URLs and paths
-        run: |
-          echo "github.server_url = ${{ github.server_url }}"
-          echo "github.api_url = ${{ github.api_url }}"
-          echo "github.graphql_url = ${{ github.graphql_url }}"
-          echo "github.workspace = ${{ github.workspace }}"
-          echo "github.event_path = ${{ github.event_path }}"
+#       - name: Print URLs and paths
+#         run: |
+#           echo "github.server_url = ${{ github.server_url }}"
+#           echo "github.api_url = ${{ github.api_url }}"
+#           echo "github.graphql_url = ${{ github.graphql_url }}"
+#           echo "github.workspace = ${{ github.workspace }}"
+#           echo "github.event_path = ${{ github.event_path }}"
 
-      - name: Print event payload (JSON)
-        run: echo '${{ toJson(github.event) }}'
+#       - name: Print event payload (JSON)
+#         run: echo '${{ toJson(github.event) }}'
 
-      - name: Print token and secret source
-        run: |
-          echo "github.token = ${{ github.token }}"
-          echo "github.secret_source = ${{ github.secret_source }}"
+#       - name: Print token and secret source
+#         run: |
+#           echo "github.token = ${{ github.token }}"
+#           echo "github.secret_source = ${{ github.secret_source }}"
