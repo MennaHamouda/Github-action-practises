@@ -1,0 +1,24 @@
+name: Workflow Dispatch JSON Example
+
+on:
+  workflow_dispatch:
+    inputs:
+      config:
+        description: "JSON configuration input"
+        required: true
+        default: '{"env":"dev","region":"us-east-1","replicas":3}'
+
+jobs:
+  parse-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print raw JSON input
+        run: |
+          echo "Raw input:"
+          echo '${{ github.event.inputs.config }}'
+
+      - name: Use fromJSON to access values
+        run: |
+          echo "Environment: ${{ fromJSON(github.event.inputs.config).env }}"
+          echo "Region: ${{ fromJSON(github.event.inputs.config).region }}"
+          echo "Replicas: ${{ fromJSON(github.event.inputs.config).replicas }}"
